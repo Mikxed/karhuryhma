@@ -10,7 +10,7 @@ import h8 from './pasinauttii.jpg';
 import h9 from './tretti.jpg';
 import h10 from './hv.jpg';
 import h11 from './ekamokki.jpg';
-// import h12 from './h12';
+import h12 from './pakseli.jpg';
 // import h13 from './h13';
 // import h14 from './h14';
 // import h15 from './h15';
@@ -37,4 +37,5 @@ export {
     h9,
     h10,
     h11,
+    h12,
 };

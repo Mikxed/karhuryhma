@@ -12,17 +12,17 @@ import {
     h9,
     h10,
     h11,
+    h12,
 } from '../photos/photos';
 import moment from 'moment';
 import Moment from 'react-moment';
 
 
-export default function Calendar(props) {
-    const [hover, setHover] = useState(false);
+export default function Calendar() {
     const [hatch, setHatch] = useState(null);
     const [currentTime, setCurrentTime] = useState(null);
     const [date, setCurrentDate] = useState(null);
-    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11]);
+    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12]);
 
     useEffect(() => {
         const currTime = moment().format('HH:mm:ss');
@@ -33,7 +33,7 @@ export default function Calendar(props) {
     const currMonth = moment().month() + 1;
     const hatchArr = [2, 13, 21, 7, 8, 1, 3, 23, 14, 4, 19, 17, 5, 22, 10, 6, 20, 18, 15, 24, 16, 12, 11, 9];
 
-    function OpenModal(item, id) {
+    function OpenModal(item) {
         const idToDate = item;
         if (idToDate <= date && currMonth == 12) {
             setHatch(hatchImgArr[item-1]);
@@ -41,13 +41,20 @@ export default function Calendar(props) {
             modal.style.display = 'block';    
         }
     }
-
+    const NextHatchOpens = () => {
+        const nextHatchOpens = moment(`${currMonth}-${date+1}-${moment().year()}`);
+        if (date >= 24) {
+            return (<div>Ei muuten aukea, mutta hyvää Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
+        }
+        return (<Moment date={nextHatchOpens}
+            duration={moment()}
+        />);
+    };
     function CloseModal() {
         let modal = document.getElementById("displayImgModal");
         modal.style.display = 'none';
     }
     const HiddenImage = (item) => {
-        console.log(item);
         if (item.item <= date) {
             return (<img src={hatchImgArr[item.item-1]} className="hatch-image" alt="hatch"/>);
         }
@@ -56,10 +63,10 @@ export default function Calendar(props) {
     return (
         <div className='hatch-body'>
             <img className='title-img' src={Karhuryhmä} alt="hatch"/>
-            {/* <div className="timeUntilNextHatch">
+            <div className="time-until-next-hatch">
                 <div>Aikaa uuden luukun aukeamiseen:</div>
-
-            </div> */}
+                <NextHatchOpens/>
+            </div>
             <div className='display-img-body' id="displayImgModal">
                 <span onClick={CloseModal} className="close">&times;</span>
                 <img className="display-img" src={hatch}></img>
