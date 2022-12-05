@@ -6,39 +6,30 @@ export default function SongList(props) {
     const [songName, setSongName] = useState('');
 
     function addSong() {
-        const templist = list
+        const templist = list;
         if (songName) {
-            templist.push(songName)
-            console.log(templist)
-            setList(templist)
-            setSongName('')
+            templist.push(songName);
+            console.log(templist);
+            setList(templist);
+            setSongName('');
         }
     }
 
-    // function songList() {
-    //     if (list.length > 0) {      
-    //         return list.map((song, index) => (
-    //             <Song key={index} song={song} />
-    //         ));
-    //     }
-    // }
+    const List = () => {
+        return list.map((song, key) => <div key={key}>{song}</div>);
+    };
 
-    // const Song = ({song, key}) => {
-    //     return ( 
-    //         <article key={key}>
-    //             <a href={song.artist}>{song.name}</a>
-    //         </article>
-    //     );
-    // };
-    
     return (
-    <div>
-        <p>{list}</p>
-
-        <button onClick={addSong}>
-            Click me
-        </button>
-        <input value={songName} onChange={(event) => setSongName(event.target.value)}/>
-    </div>
-    )
+        <div className='songList'>
+            <div className='songListTable'>
+                <List/>
+            </div>
+            <div className='searchBar'>
+                <button className='defaultButton' onClick={addSong}>
+                Add
+                </button>
+                <input value={songName} onChange={(event) => setSongName(event.target.value)} />
+            </div>
+        </div>
+    );
 }
