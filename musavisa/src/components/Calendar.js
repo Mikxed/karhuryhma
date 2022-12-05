@@ -42,7 +42,8 @@ export default function Calendar() {
         }
     }
     const NextHatchOpens = () => {
-        const nextHatchOpens = moment(`${currMonth}-${date+1}-${moment().year()}`);
+        const nextHatchOpens = moment(`${moment().year()}/${currMonth}/${date+1}`);
+        console.log(nextHatchOpens);
         if (date >= 24) {
             return (<div>Ei muuten aukea, mutta hyvää Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
         }
