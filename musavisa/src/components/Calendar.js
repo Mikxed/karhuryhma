@@ -8,8 +8,8 @@ import {
     h5,
     h6,
 } from '../photos/photos';
-import Moment from 'react-moment';
 import moment from 'moment';
+import Moment from 'react-moment';
 
 
 export default function Calendar(props) {
@@ -20,11 +20,11 @@ export default function Calendar(props) {
     const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6]);
     const [guess, setGuess] = useState('');
     const [hatchAmount, setHatchAmount] = useState(24);
-    
+
     useEffect(() => {
-        const time = moment().format('HH:mm:ss');
+        const currTime = moment().format('HH:mm:ss');
         const date = moment().date();
-        setCurrentTime(time);
+        setCurrentTime(currTime);
         setCurrentDate(date);
     });
     const hatchArr = [];
@@ -48,6 +48,10 @@ export default function Calendar(props) {
     return (
         <div className='hatchBody'>
             <img className='titleImg' src={Karhuryhmä} alt="hatch"/>
+            {/* <div className="timeUntilNextHatch">
+                <div>Aikaa uuden luukun aukeamiseen:</div>
+
+            </div> */}
             <div className='displayImgBody' id="displayImgModal">
                 <span onClick={CloseModal} className="close">&times;</span>
                 <img className="displayImg" src={hatch}></img>

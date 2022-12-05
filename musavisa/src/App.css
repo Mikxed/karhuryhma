@@ -142,6 +142,10 @@ p {
   cursor: pointer;
 }
 
+.timeUntilNextHatch {
+  margin: 8px;
+}
+
 .hatchImage {
   object-fit: cover;
   object-position: 46% 54%;
