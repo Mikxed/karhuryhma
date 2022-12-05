@@ -80,7 +80,7 @@ p {
   width: 100%;
 } */
 
-.titleImg {
+.title-img {
   width: 30%;
 }
 
@@ -95,18 +95,18 @@ p {
   width: 120%;
 }
 
-.hatchBody {
+.hatch-body {
   width: 30%;
   display: contents;
 }
 
-.hatchSize {
-  width: 200px;
-  height: 200px;
+.hatch-size {
+  width: 100px;
+  height: 100px;
   margin: 8px;
 }
 
-.closedHatchAvailable {
+.closed-hatch-available {
   align-items: center;
   display: flex;
   place-content: center;
@@ -120,7 +120,7 @@ p {
   z-index: 1;
 }
 
-.closedHatch {
+.closed-hatch {
   align-items: center;
   display: flex;
   place-content: center;
@@ -135,7 +135,7 @@ p {
 }
 
 
-.hiddenHatch {
+.hidden-hatch {
   border-radius: 10%;
   width: 100%;
   height: 100%;
@@ -146,20 +146,27 @@ p {
   margin: 8px;
 }
 
-.hatchImage {
+.hatch-image {
   object-fit: cover;
   object-position: 46% 54%;
   width: inherit;
   height: inherit;
   cursor: pointer;
-  filter: blur(8px)
+  filter: blur(10px)
 }
 
-.closedHatchAvailable:hover {
+.closed-hatch-available:hover {
   opacity: calc(0);
 }
 
-.displayImgBody {
+.calendar-layout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.display-img-body {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -182,7 +189,7 @@ p {
   /* Black w/ opacity */
 }
 
-.displayImg {
+.display-img {
   margin: auto;
   display: block;
   width: 80%;
@@ -236,7 +243,7 @@ p {
 
 
 
-/* .hiddenHatch {
+/* .hidden-hatch {
   width: 200px !important;
   height: 200px;
   object-fit: cover;

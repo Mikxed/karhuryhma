@@ -5,11 +5,11 @@ import h3 from './immuunivala.png';
 import h4 from './navicap.jpg';
 import h5 from './Vantaa.png';
 import h6 from './FALSU.PNG';
-// import h7 from './h7';
-// import h8 from './h8';
-// import h9 from './h9';
-// import h10 from './h10';
-// import h11 from './h11';
+import h7 from './joulusieppo.png';
+import h8 from './pasinauttii.jpg';
+import h9 from './tretti.jpg';
+import h10 from './hv.jpg';
+import h11 from './ekamokki.jpg';
 // import h12 from './h12';
 // import h13 from './h13';
 // import h14 from './h14';
@@ -32,4 +32,9 @@ export {
     h4,
     h5,
     h6,
+    h7,
+    h8,
+    h9,
+    h10,
+    h11,
 };
