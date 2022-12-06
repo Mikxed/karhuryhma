@@ -11,9 +11,9 @@ import h9 from './tretti.jpg';
 import h10 from './hv.jpg';
 import h11 from './ekamokki.jpg';
 import h12 from './pakseli.jpg';
-// import h13 from './h13';
-// import h14 from './h14';
-// import h15 from './h15';
+import h13 from './uuvee.jpg';
+import h14 from './classic.jpg';
+import h15 from './tammereella.jpg';
 // import h16 from './h16';
 // import h17 from './h17';
 // import h18 from './h18';
@@ -38,4 +38,7 @@ export {
     h10,
     h11,
     h12,
+    h13,
+    h14,
+    h15,
 };

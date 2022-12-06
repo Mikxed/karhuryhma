@@ -13,6 +13,9 @@ import {
     h10,
     h11,
     h12,
+    h13,
+    h14,
+    h15,
 } from '../photos/photos';
 import moment from 'moment';
 import Moment from 'react-moment';
@@ -22,7 +25,7 @@ export default function Calendar() {
     const [hatch, setHatch] = useState(null);
     const [currentTime, setCurrentTime] = useState(null);
     const [date, setCurrentDate] = useState(null);
-    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12]);
+    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15]);
 
     useEffect(() => {
         const currTime = moment().format('HH:mm:ss');
@@ -78,7 +81,7 @@ export default function Calendar() {
                 {hatchArr.map((item, i) => (
                     <div className='hatch-size' onClick={() => OpenModal(item,i)} key={item}>
                         <div className={`${item <= date ? "closed-hatch-available" : "closed-hatch"}`}>
-                            <div>{item}</div>
+                            <div className={`${item <= date ? "hatch-number" : ""}`}>{item}</div>
                         </div>
                         <div className="hidden-hatch">
                             <HiddenImage item={item}/>
@@ -86,8 +89,6 @@ export default function Calendar() {
                     </div>
                 ))}
             </div>
-            {/* <p>{guess}</p>
-            <input value={guess} onChange={(event) => setGuess(event.target.value)} /> */}
         </div>
     );
 }
