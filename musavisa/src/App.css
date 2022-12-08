@@ -156,17 +156,16 @@ p {
 }
 
 .hatch-number {
-  transition: all .5s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .hatch-size:hover .closed-hatch-available {
   /* opacity: calc(0); */
-  filter: blur(4px);
   width: 0px;
 }
 
 .hatch-size:hover .hatch-number {
-  opacity: calc(0);
+  font-size: 0;
 }
 
 .calendar-layout {

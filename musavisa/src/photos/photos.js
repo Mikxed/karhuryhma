@@ -14,15 +14,15 @@ import h12 from './pakseli.jpg';
 import h13 from './uuvee.jpg';
 import h14 from './classic.jpg';
 import h15 from './tammereella.jpg';
-// import h16 from './h16';
-// import h17 from './h17';
-// import h18 from './h18';
+import h16 from './ykatasse.jpg';
+import h17 from './hatut.jpg';
+import h18 from './oakbarrel.jpg';
 // import h19 from './h19';
 // import h20 from './h20';
 // import h21 from './h21';
 // import h22 from './h22';
 // import h23 from './h23';
-// import h24 from './h24';
+import h24 from './Alfat.jpg';
 
 export { 
     Karhuryhmä, 
@@ -41,4 +41,7 @@ export {
     h13,
     h14,
     h15,
+    h16,
+    h17,
+    h18,
 };

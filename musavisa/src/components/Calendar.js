@@ -16,6 +16,9 @@ import {
     h13,
     h14,
     h15,
+    h16,
+    h17,
+    h18,
 } from '../photos/photos';
 import moment from 'moment';
 import Moment from 'react-moment';
@@ -25,7 +28,7 @@ export default function Calendar() {
     const [hatch, setHatch] = useState(null);
     const [currentTime, setCurrentTime] = useState(null);
     const [date, setCurrentDate] = useState(null);
-    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15]);
+    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18]);
 
     useEffect(() => {
         const currTime = moment().format('HH:mm:ss');
@@ -34,6 +37,7 @@ export default function Calendar() {
         setCurrentDate(date);
     });
     const currMonth = moment().month() + 1;
+    // const currMonth = 11;
     const hatchArr = [2, 13, 21, 7, 8, 1, 3, 23, 14, 4, 19, 17, 5, 22, 10, 6, 20, 18, 15, 24, 16, 12, 11, 9];
 
     function OpenModal(item) {
@@ -46,9 +50,8 @@ export default function Calendar() {
     }
     const NextHatchOpens = () => {
         const nextHatchOpens = moment(`${moment().year()}/${currMonth}/${date+1}`);
-        console.log(nextHatchOpens);
-        if (date >= 24) {
-            return (<div>Ei muuten aukea, mutta hyvää Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
+        if ((date >= 24 && currMonth == 12) || currMonth != 12) {
+            return (<div>Ei muuten aukea, mutta upeeta Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
         }
         return (<Moment date={nextHatchOpens}
             duration={moment()}
