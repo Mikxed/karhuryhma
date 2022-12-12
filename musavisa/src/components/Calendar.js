@@ -40,7 +40,7 @@ export default function Calendar() {
         const currTime = moment().format('HH:mm:ss');
         const date = moment().date();
         setCurrentTime(currTime);
-        setCurrentDate(24);
+        setCurrentDate(date);
     });
     const currMonth = moment().month() + 1;
     // const currMonth = 11;
