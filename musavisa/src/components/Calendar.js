@@ -42,6 +42,10 @@ export default function Calendar() {
         setCurrentTime(currTime);
         setCurrentDate(date);
     });
+    let header = document.getElementById("header");
+    if (header) {
+        header.style.background = `linear-gradient(90deg, rgb(${255-date*10}, ${255-date*10}, ${(date*2)*10}) 0%, rgb(${date*10}, ${255-date*10}, ${255-date*10}) 100%)`;
+    }
     const currMonth = moment().month() + 1;
     // const currMonth = 11;
     const hatchArr = [2, 13, 21, 7, 8, 1, 3, 23, 14, 4, 19, 17, 5, 22, 10, 6, 20, 18, 15, 24, 16, 12, 11, 9];
@@ -80,15 +84,15 @@ export default function Calendar() {
                 <div>Aikaa uuden luukun aukeamiseen:</div>
                 <NextHatchOpens/>
             </div>
-            <div className='display-img-body' id="displayImgModal">
+            <div className='display-img-body' id="displayImgModal" onClick={CloseModal}>
                 <span onClick={CloseModal} className="close">&times;</span>
                 <img className="display-img" src={hatch}></img>
                 <div id="caption">Upeeta meininkiä</div>
             </div>
             <div className='calendar-layout'>
 
-                {hatchArr.map((item, i) => (
-                    <div className='hatch-size' onClick={() => OpenModal(item,i)} key={item}>
+                {hatchArr.map((item) => (
+                    <div className='hatch-size' onClick={() => OpenModal(item)} key={item}>
                         <div className={`${item <= date ? "closed-hatch-available" : "closed-hatch"}`}>
                             <div className={`${item <= date ? "hatch-number" : ""}`}>{item}</div>
                         </div>
