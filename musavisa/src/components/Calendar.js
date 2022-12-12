@@ -37,19 +37,20 @@ export default function Calendar() {
     const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24]);
 
     useEffect(() => {
-        const currTime = moment().format('HH:mm:ss');
         const date = moment().date();
-        setCurrentTime(currTime);
         setCurrentDate(date);
+        if (!currentTime) {
+            setCurrentTime(moment());
+        }
     });
+    
     let header = document.getElementById("header");
     if (header) {
         header.style.background = `linear-gradient(90deg, rgb(${255-date*10}, ${255-date*10}, ${(date*2)*10}) 0%, rgb(${date*10}, ${255-date*10}, ${255-date*10}) 100%)`;
     }
     const currMonth = moment().month() + 1;
-    // const currMonth = 11;
     const hatchArr = [2, 13, 21, 7, 8, 1, 3, 23, 14, 4, 19, 17, 5, 22, 10, 6, 20, 18, 15, 24, 16, 12, 11, 9];
-
+    
     function OpenModal(item) {
         const idToDate = item;
         if (idToDate <= date && currMonth == 12) {
@@ -58,13 +59,16 @@ export default function Calendar() {
             modal.style.display = 'block';    
         }
     }
+    setInterval(() => {
+        setCurrentTime(moment());
+    }, 1000);
+    const nextHatchOpens = moment(`${moment().year()}/${currMonth}/${date+1}`);
     const NextHatchOpens = () => {
-        const nextHatchOpens = moment(`${moment().year()}/${currMonth}/${date+1}`);
         if ((date >= 24 && currMonth == 12) || currMonth != 12) {
             return (<div>Ei muuten aukea, mutta upeeta Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
         }
         return (<Moment date={nextHatchOpens}
-            duration={moment()}
+            duration={currentTime}
         />);
     };
     function CloseModal() {
