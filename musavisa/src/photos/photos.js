@@ -17,11 +17,11 @@ import h15 from './tammereella.jpg';
 import h16 from './ykatasse.jpg';
 import h17 from './hatut.jpg';
 import h18 from './oakbarrel.jpg';
-// import h19 from './h19';
-// import h20 from './h20';
-// import h21 from './h21';
-// import h22 from './h22';
-// import h23 from './h23';
+import h19 from './sponge.jpg';
+import h20 from './tommi.JPG';
+import h21 from './ryybs.JPG';
+import h22 from './on.png';
+import h23 from './sällit.JPG';
 import h24 from './Alfat.jpg';
 
 export { 
@@ -44,4 +44,10 @@ export {
     h16,
     h17,
     h18,
+    h19,
+    h20,
+    h21,
+    h22,
+    h23,
+    h24,
 };

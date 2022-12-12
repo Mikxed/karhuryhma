@@ -19,6 +19,12 @@ import {
     h16,
     h17,
     h18,
+    h19,
+    h20,
+    h21,
+    h22,
+    h23,
+    h24,
 } from '../photos/photos';
 import moment from 'moment';
 import Moment from 'react-moment';
@@ -28,13 +34,13 @@ export default function Calendar() {
     const [hatch, setHatch] = useState(null);
     const [currentTime, setCurrentTime] = useState(null);
     const [date, setCurrentDate] = useState(null);
-    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18]);
+    const [hatchImgArr, setHatchImgArr] = useState([h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24]);
 
     useEffect(() => {
         const currTime = moment().format('HH:mm:ss');
         const date = moment().date();
         setCurrentTime(currTime);
-        setCurrentDate(date);
+        setCurrentDate(24);
     });
     const currMonth = moment().month() + 1;
     // const currMonth = 11;
