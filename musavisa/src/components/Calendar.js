@@ -59,10 +59,10 @@ export default function Calendar() {
             modal.style.display = 'block';    
         }
     }
-    setInterval(() => {
-        setCurrentTime(moment());
-    }, 1000);
+
     const nextHatchOpens = moment(`${moment().year()}/${currMonth}/${date+1}`);
+
+    // const timer = moment.duration(nextHatchOpens.diff(currentTime));
     const NextHatchOpens = () => {
         if ((date >= 24 && currMonth == 12) || currMonth != 12) {
             return (<div>Ei muuten aukea, mutta upeeta Joulua ja onnellista uutta vuotta ja upeeta meininkiä ja halvalla!!!</div>);
@@ -70,6 +70,7 @@ export default function Calendar() {
         return (<Moment date={nextHatchOpens}
             duration={currentTime}
         />);
+        // return (<div>{`${timer._data.hours}:${timer._data.minutes}:${timer._data.seconds}`}</div>);
     };
     function CloseModal() {
         let modal = document.getElementById("displayImgModal");

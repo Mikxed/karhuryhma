@@ -53,6 +53,10 @@
   text-align: justify;
 }
 
+.song-row {
+  display: flex;
+}
+
 .searchBar {
   width: auto;
   display: inline-block;
